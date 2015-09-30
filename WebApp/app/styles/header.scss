@@ -25,7 +25,14 @@ header {
     .navbar-nav {
 
       #lien-actif {
-        border-bottom: solid $my-blue 3px;
+        @media (min-width: 768px){
+          border-bottom: solid $my-blue 3px;
+        }
+
+        @media (max-width: 767px) {
+          background-color: $my-blue;
+        }
+
       }
 
     }
