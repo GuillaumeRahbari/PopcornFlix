@@ -1,1 +1,25 @@
 @import "variables";
+
+$background-color-header: rgba(12,12,12,0.8);
+
+header {
+
+  nav {
+
+    &.navbar-default {
+      background-color: $background-color-header;
+      border-color: transparent;
+
+      a {
+        color: $font-color !important;
+
+        &:hover {
+          color: $font-color-hover !important;
+        }
+      }
+
+
+    }
+
+  }
+}
