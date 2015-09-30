@@ -27,11 +27,7 @@
     <div ng-view=""></div>
     </div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+    <footer class="footer" ng-include="'views/footer.html'" ng-controller="FooterCtrl"></footer>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -52,6 +48,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/header.js"></script>
+        <script src="scripts/controllers/footer.js"></script>
         <!-- endbuild -->
 </body>
 </html>
