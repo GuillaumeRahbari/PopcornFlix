@@ -1,3 +1,8 @@
 {
-  
+  "movies" : [
+    {
+      "title" : "Terminator Genisys",
+      "image" : "terminator_genisys.jpg"
+    }
+  ]
 }
