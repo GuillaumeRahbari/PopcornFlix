@@ -1,0 +1,14 @@
+@import "variables";
+
+section {
+  img {
+    width: 150px;
+    height: 230px;
+    border: 2px solid $background-color;
+    border-radius: 10px;
+
+    &:hover {
+      border: 2px solid $my-blue;
+    }
+  }
+}

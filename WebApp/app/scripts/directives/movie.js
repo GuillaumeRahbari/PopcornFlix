@@ -7,7 +7,7 @@
  * # movie
  */
 angular.module('popcornFlixApp')
-  .directive('movie', ['movieService',function (movieService) {
+  .directive('movie', [function () {
     return {
       template:
       '<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">' +
