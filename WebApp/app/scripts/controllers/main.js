@@ -8,13 +8,13 @@
  * Controller of the popcornFlixApp
  */
 angular.module('popcornFlixApp')
-  .controller('MainCtrl', ['movieService', function (movieService) {
+  .controller('MainCtrl', ['$scope','movieService', function ($scope,movieService) {
     movieService.getMovies().then(
       function (data){
-        console.log(data);
+        $scope.movies = data.movies;
       },
-      function (data) {
-        console.log(data);
+      function (msgError) {
+        console.log(msgError);
       }
     )
   }]);
