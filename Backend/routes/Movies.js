@@ -4,7 +4,7 @@ var fs = require('fs');
 var movieList = require(__dirname + '/Movies.json');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/movies', function(req, res, next) {
     res.send(movieList);
 });
 
