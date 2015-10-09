@@ -14,7 +14,7 @@ angular.module('popcornFlixApp')
         '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
           '<img lazyload ll-src="http://localhost:3000/images/{{movie.image}}"/>' +
         '</div>' +
-        '<div>' +
+        '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">' +
           '{{movie.title}}' +
         '</div>' +
       '</div>',
