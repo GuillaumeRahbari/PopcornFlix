@@ -8,10 +8,13 @@
  * Controller of the popcornFlixApp
  */
 angular.module('popcornFlixApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', ['movieService', function (movieService) {
+    movieService.getMovies().then(
+      function (data){
+        console.log(data);
+      },
+      function (data) {
+        console.log(data);
+      }
+    )
+  }]);
