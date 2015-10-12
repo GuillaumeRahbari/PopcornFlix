@@ -14,4 +14,14 @@ router.get('/images/:name', function(req, res, next) {
     res.end(img, 'binary');
 });
 
+router.get('/movie/:title', function(req, res, next) {
+    for (movie in movieList.movies){
+       if (movieList.movies[movie].title = req.params.title){
+           res.send(movieList.movies[movie]);
+           return;
+       }
+    }
+    res.sendStatus(500);
+});
+
 module.exports = router;
