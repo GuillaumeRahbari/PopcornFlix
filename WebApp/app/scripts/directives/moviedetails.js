@@ -9,10 +9,12 @@
 angular.module('popcornFlixApp')
   .directive('movieDetails', function () {
     return {
-      template: '<div></div>',
+      template: '<div class="col-lg-12" background-image test="{{movie.background}}"></div>',
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the movieDetails directive');
-      }
+      scope : {
+        movie: '=movie'
+      },
+      replace: true,
+      require: 'backgroundImage'
     };
   });

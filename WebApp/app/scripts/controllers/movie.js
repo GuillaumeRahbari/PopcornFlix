@@ -14,12 +14,11 @@ angular.module('popcornFlixApp')
 
     movieService.getMovie(title).then(
       function (data){
-        $scope.movie = data;
-        console.log($scope.movie);
+        $scope.movieDetails = data;
       },
       function (msgError) {
         console.log(msgError);
       }
-    )
+    );
 
   }]);
