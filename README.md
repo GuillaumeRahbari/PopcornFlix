@@ -131,10 +131,10 @@ angular
 ```
 
 We first define the **angular.module**, in which we give a name to our module and the list of modules that our module includes.
-Then we use the **.config** method, it's argument is a function that has as arguments the $routeProvider service.
+Then we use the **.config** method, it's argument is a function that has as arguments the **$routeProvider** service.
 And then we define the routes with the $routeProvider.
 Here when the user go to the root of our app we load the page _movies.html_ where was the ng-view directive. Actually, we replace the ng-view directive by the page we load. It means that somewhere in our html pages we had an element like that :
-<ng-view></ng-view>. This one is replaced by what is contained in the movies.html.
+`<ng-view></ng-view>`. This one is replaced by what is contained in the movies.html.
 We also load a controller with the page that allows to had some logic associated at the view.
 
 ### [Services](https://docs.angularjs.org/guide/services)
