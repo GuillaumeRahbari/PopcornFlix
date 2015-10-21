@@ -12,7 +12,7 @@ angular.module('popcornFlixApp')
       restrict:'A',
       scope: {},
       link: function(scope, elem, attrs) {
-        $timeout(function(){ elem.attr('src', attrs.llSrc) });
+        $timeout(function(){ elem.attr('src', attrs.llSrc) }, 200);
       }
     };
   }]);

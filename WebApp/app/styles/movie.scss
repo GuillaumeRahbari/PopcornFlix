@@ -1,0 +1,27 @@
+@import "variables";
+
+section#movieDetail {
+
+  > div {
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+  }
+
+  img {
+    width: 280px;
+    height: $imgHeight;
+  }
+
+  .texte {
+    height: $imgHeight;
+    text-align: center;
+    line-height: $imgHeight;
+
+    span {
+      vertical-align: middle;
+      display: inline-block;
+      line-height: 20px;
+    }
+  }
+
+}
