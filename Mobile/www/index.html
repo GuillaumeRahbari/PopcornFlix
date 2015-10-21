@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE >
+<html >
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -8,6 +8,9 @@
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/movies.css">
+    <link rel="stylesheet" href="css/style.css">
+
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -17,15 +20,68 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/services/movieservice.js"></script>
+    <script src="js/services/constants.js"></script>
+    <script src="js/directives/movieslist.js"></script>
+    <script src="js/directives/movie.js"></script>
+    <script src="js/directives/carrousel.js"></script>
+    <script src="js/directives/lazyload.js"></script>
+    <script src="js/directives/moviedetails.js"></script>
+    <script src="js/directives/movieslide.js"></script>
+    <script src="js/controllers/movies.js"></script>
+    <script src="js/controllers/movie.js"></script>
   </head>
   <body ng-app="starter">
+    <ion-side-menus>
+      <ion-side-menu-content>
+        <ion-nav-bar class="bar bar-dark">
+          <ion-nav-back-button></ion-nav-back-button>
+          <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+          </ion-nav-buttons>
+          <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-search" menu-toggle="right" ui-sref="search"></button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+      </ion-side-menu-content>
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
+      <ion-side-menu side="left">
+        <ion-item menu-close ui-sref="home">
+          Home
+        </ion-item>
+        <ion-list>
+          <ion-item class="bar bar-dark">
+            Tops
+          </ion-item>
+          <ion-item menu-close ui-sref="movies">
+            Movies
+          </ion-item>
+          <ion-item menu-close ui-sref="movies">
+            Series
+          </ion-item>
+          <ion-item class="bar bar-dark">
+            Genre
+          </ion-item>
+          <ion-item menu-close ui-sref="movies">
+            Action
+          </ion-item>
+          <ion-item menu-close ui-sref="movies">
+            Animation
+          </ion-item>
+          <ion-item menu-close ui-sref="movies">
+            Thriller
+          </ion-item>
+          <ion-item menu-close ui-sref="movies">
+            Musical
+          </ion-item>
+          <ion-item menu-close ui-sref="movies">
+            Science Fiction
+          </ion-item>
+
+        </ion-list>
+      </ion-side-menu>
+    </ion-side-menus>
+
   </body>
 </html>

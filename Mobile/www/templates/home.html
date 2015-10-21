@@ -1,0 +1,12 @@
+<ion-view title="PopCornFlix">
+  <ion-content style="background-color: black">
+          <movie ng-repeat="movie in movies" movie="movie" ng-if="$first">
+            <!--a ng-href="#/movie/{{movie.title}}" >
+              <img id="imagehome" lazyload ll-src="http://localhost:3000/images/{{movie.image}}" />
+            </a-->
+          </movie>
+          <movieslist ng-repeat="movie in movies" movie="movie">
+          </movieslist>
+  </ion-content>
+
+</ion-view>

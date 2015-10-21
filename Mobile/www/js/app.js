@@ -17,3 +17,37 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+.config(function($stateProvider, $urlRouterProvider){
+
+    $stateProvider.state('home',{
+      url:'/home',
+      templateUrl: 'templates/home.html',
+      controller: 'MoviesCtrl',
+      controllerAs: 'movies'
+    })
+
+    $stateProvider.state('movie',{
+      url:'/movie',
+      templateUrl: 'templates/movie.html',
+      controller: 'MovieCtrl'
+    })
+
+    $stateProvider.state('movies',{
+      url:'/movies',
+      templateUrl:'templates/movies.html',
+      controller: 'MoviesCtrl'
+    })
+
+    $stateProvider.state('search',{
+      url:'/search',
+      templateUrl:'templates/search.html',
+      controller: 'MoviesCtrl'
+    })
+
+
+    $urlRouterProvider.otherwise('/home')
+
+  });
+
+
