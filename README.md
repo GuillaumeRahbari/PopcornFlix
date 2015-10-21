@@ -102,7 +102,8 @@ That allows the user to have a rooting in the application.
 ### [$routeProvider](https://docs.angularjs.org/api/ngRoute/provider/$routeProvider)
 
 There is the rooting of our application :
-```angular
+```
+angular
   .module('popcornFlixApp', [
     'ngAnimate',
     'ngCookies',
@@ -126,7 +127,8 @@ There is the rooting of our application :
       .otherwise({
         redirectTo: '/'
       });
-  });```
+  });
+```
 
 We first define the **angular.module**, in which we give a name to our module and the list of modules that our module includes.
 Then we use the **.config** method, it's argument is a function that has as arguments the $routeProvider service.
