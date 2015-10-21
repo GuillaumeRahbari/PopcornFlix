@@ -1,0 +1,14 @@
+<ion-view>
+  <ion-content style="background-color: black">
+    <div class="list">
+      <label class="item item-input">
+        <input type="search" placeholder="Search" ng-model="search">
+      </label>
+      <button class="button button-full button-assertive" ng-click="doSearch()">Search</button>
+    </div>
+    <ion-slide-box>
+      <movieslide ng-repeat="movie in movies" movie="movie">
+      </movieslide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

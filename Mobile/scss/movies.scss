@@ -1,0 +1,22 @@
+@import "variables";
+
+section {
+  text-align: center;
+
+  > div {
+    padding: 10px 10px 10px 10px;
+  }
+
+  img {
+    width: 30px;
+    height: 20px;
+    border: 2px solid $background-color;
+    border-radius: 10px;
+
+    &:hover {
+      border: 2px solid $my-blue;
+    }
+  }
+
+
+}
