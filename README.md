@@ -88,7 +88,15 @@ And we need Cordova to use Ionic.
 - Run `ionic build android` (or `ionic build ios` if you are using an iPhone).
 - Then run `ionic run android` (or `ionic run ios` if you are using an iPhone).
 
-## AngularJS
+## [AngularJS](https://angularjs.org/)
+
+AngularJS is a javascript web application framework developed by Google.
+It aims to simplify the development and the testing of web application.
+It provides 
+- An MVC architecture.
+- A two-way data binding between html and javascript files (i.e. between views and controllers).
+- Dependencies injections (brings simplicity, fiability, reutilisability and testability to the code).
+- DOM manipulation thanks to "Directives".
 
 ### [ng-app](https://docs.angularjs.org/api/ng/directive/ngApp)
 
@@ -131,7 +139,7 @@ angular
 ```
 
 We first define the **angular.module**, in which we give a name to our module and the list of modules that our module includes.
-Then we use the **.config** method, it's argument is a function that has as arguments the **$routeProvider** service.
+Then we use the **.config** method, its argument is a function that has as arguments the **$routeProvider** service.
 And then we define the routes with the $routeProvider.
 Here when the user go to the root of our app we load the page _movies.html_ where was the ng-view directive. Actually, we replace the ng-view directive by the page we load. It means that somewhere in our html pages we had an element like that :
 `<ng-view></ng-view>`. This one is replaced by what is contained in the movies.html.
@@ -148,3 +156,165 @@ To see more explainations on our services you can just check our [file](https://
 The angular directives are something powerful that permits to manipulate the DOM.
 Our most important directives are used to define templates (others are some hack).
 For example, every movie that we get (thanks to the service we used before) is build thanks to the template. It avoids duplication of code and makes the code more readable and maintenable.
+
+## [Ionic](http://ionicframework.com/)
+
+Ionic is a framework to create mobile applications with web technologies such as html, css and javascript.
+To do this Ionic uses :
+- Gulp : it is a javascript tasks runner.
+- AngularJS
+- Apache Cordova to create cross plateforms applications.
+Ionic does the same thing that Cordova plus the power of AngularJS directives.
+Ionic offers several directives to build apps faster.
+
+### Create a first app
+
+We already installed ionic throught npm. So we now have the `ionic` command available.
+We just have to open a terminal and write `ionic start NameOfTheProject blank` (it is the simpliest starter, there are others such as `tabs` and `sidemenu`).
+Ionic will scaffold all the application.
+When it is finished you just can write `ionic serve` to previsualize your app in your favorite web browser.
+
+###
+
+The ionic command permit to do a lot of stuff.
+- We can add a platform : `ionic add platform android`
+- We can add a cordova plugin : `ionic plugin add myPlugin`
+- We can build the project : `ionic build android`
+- We can visualize the app in an emulator : `ionic emulate android`
+- We can visualize the app in a real device : `ionic run android`
+
+
+### The structure of the project
+
+### Rooting
+
+Ionic doesn't use the rooting provided by AngularJS, it uses the module [ui-router](https://github.com/angular-ui/ui-router/).
+It based on states. But the way to use it is similary to the rooting of AngularJS.
+Here is the rooting of the mobile app :
+```
+angular.module('starter', ['ionic'])
+	.config(function($stateProvider, $urlRouterProvider){
+
+    $stateProvider.state('home',{
+      url:'/home',
+      templateUrl: 'templates/home.html',
+      controller: 'MoviesCtrl',
+      controllerAs: 'movies'
+    })
+
+    $stateProvider.state('movie',{
+      url:'/movie',
+      templateUrl: 'templates/movie.html',
+      controller: 'MovieCtrl'
+    })
+
+    $stateProvider.state('movies',{
+      url:'/movies',
+      templateUrl:'templates/movies.html',
+      controller: 'MoviesCtrl'
+    })
+
+    $stateProvider.state('search',{
+      url:'/search',
+      templateUrl:'templates/search.html',
+      controller: 'MoviesCtrl'
+    })
+
+
+    $urlRouterProvider.otherwise('/home')
+
+  });
+```
+The rest is the same that we did in AngularJS except that we use the directive ion-nav-view directive.
+```
+<ion-nav-view>
+</ion-nav-view>
+```
+
+### Controllers
+
+Controllers are similar that those we wrote in the we application in AngularJs, we use them the same way.
+
+### Services
+
+We also use the same services that those we wrote in the web application in AngularJS.
+
+### Directives
+
+We also use similar directives that those we wrote in the web application in AngularJS.
+
+### [ng-app](https://docs.angularjs.org/api/ng/directive/ngApp)
+
+This is again the directive provided by AngularJS that bootstrap the application.
+
+### [ion-nav-bar](http://ionicframework.com/docs/api/directive/ionNavBar/)
+
+This directive is used to create easily a navbar in our application.
+We use it like this :
+```
+<ion-nav-bar class="bar-positive">
+	<ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+```
+
+### [ion-side-menu](http://ionicframework.com/docs/api/directive/ionSideMenus/)
+
+To have a side-menu it is a little more complex.
+```
+<ion-side-menus>
+
+  <ion-side-menu-content>
+
+    <ion-nav-bar class="bar bar-dark">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-search" menu-toggle="right" ui-sref="search"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+
+    <ion-item menu-close ui-sref="home">
+      Home
+    </ion-item>
+
+    <ion-list>
+
+      <ion-item class="bar bar-dark">
+        Tops
+      </ion-item>
+
+      <ion-item menu-close ui-sref="movies">
+        Movies
+      </ion-item>
+
+      <ion-item menu-close ui-sref="movies">
+        Series
+      </ion-item>
+
+    </ion-list>
+
+  </ion-side-menu>
+
+</ion-side-menus>
+```
+
+### Sass
+
+To use sass in ionic we just used the command `ionic setup sass`.
+And then we added the gulp task :
+```
+gulp.task('default', ['sass']);
+
+gulp.task('sass', function(done) {
+  gulp.src('./scss/**/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('./www/css/'))
+});
+```
