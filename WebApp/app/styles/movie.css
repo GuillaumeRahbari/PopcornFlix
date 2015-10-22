@@ -1,0 +1,16 @@
+section#movieDetail > div {
+  padding: 10px 10px 10px 10px;
+  text-align: center; }
+section#movieDetail img {
+  width: 280px;
+  height: 420px; }
+section#movieDetail .texte {
+  height: 420px;
+  text-align: center;
+  line-height: 420px; }
+  section#movieDetail .texte span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 20px; }
+
+/*# sourceMappingURL=movie.css.map */
