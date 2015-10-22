@@ -17,7 +17,7 @@ angular.module('starter')
       '<div class="list card">'+
       '<div class="item item-image">' +
       '<a  ui-sref="movie">'+
-      '<img lazyload ll-src="http://localhost:3000/images/{{movie.image}}"/>' +
+      '<img lazyload ll-src="http://192.168.1.25:3000/images/{{movie.image}}"/>' +
       '</a>' +
       '</div>'+
       '</div>'+

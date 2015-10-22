@@ -17,7 +17,7 @@ angular.module('starter')
       template:
       '<div class="list">'+
       '<a class="item item-thumbnail-left" ui-sref="movie">' +
-      '<img lazyload ll-src="http://localhost:3000/images/{{movie.image}}"/>' +
+      '<img lazyload ll-src="http://192.168.1.25:3000/images/{{movie.image}}"/>' +
       '<h2 class="padding">{{movie.title}}</h2>' +
       '<h3>{{movie.description}}</h3>' +
       '</a>' +
