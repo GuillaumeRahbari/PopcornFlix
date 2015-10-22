@@ -225,7 +225,7 @@ angular.module('starter', ['ionic'])
 
   });
 ```
-The rest is the same that we did in AngularJS except that we use the directive ion-nav-view directive.
+The rest is the same that we did in AngularJS except that we use the ion-nav-view directive.
 ```
 <ion-nav-view>
 </ion-nav-view>
