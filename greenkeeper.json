@@ -1,0 +1,14 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "Backend/package.json",
+        "Mobile/package.json",
+        "Mobile/www/lib/angular-animate/package.json",
+        "Mobile/www/lib/angular-sanitize/package.json",
+        "Mobile/www/lib/angular/package.json",
+        "WebApp/package.json"
+      ]
+    }
+  }
+}
